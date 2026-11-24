@@ -2,7 +2,7 @@
 -- TechFix - Banco Upgrade
 -- 02_regras.sql : triggers de negocio (permissoes, Luhn, kardex, maquina de
 -- estados da OS, orcamento, precos congelados, estorno, pagamentos)
--- Fonte de verdade: docs/especificacao_upgrade.md
+-- Fonte de verdade: upgrade/docs/especificacao_upgrade.md
 --
 -- Padrao de permissao (secao 2.1) - funcionario inativo nao executa nada:
 --   NOT EXISTS (SELECT 1 FROM funcionario f
@@ -16,7 +16,7 @@
 --  * recursive_triggers = OFF (padrao do SQLite).
 --  * Mensagens: RAISE(ABORT, 'CODIGO: mensagem').
 --
--- Decisoes/desvios (ver README.md):
+-- Decisoes/desvios (ver upgrade/README.md):
 --  * os_peca.custo_unitario deve ser igual a peca.custo_medio (snapshot enviado
 --    pela aplicacao; divergencia rejeitada, como no preco congelado).
 --  * Estorno de peca devolve o estoque ao custo medio vigente (custo medio nao

@@ -1,14 +1,14 @@
 -- =============================================================================
 -- TechFix - Banco Upgrade (SQLite >= 3.38)
 -- 01_estrutura.sql : tabelas (STRICT) e indices
--- Fonte de verdade: docs/especificacao_upgrade.md
+-- Fonte de verdade: upgrade/docs/especificacao_upgrade.md
 --
 -- Convencoes: dinheiro em centavos (INTEGER), percentual em pontos-base,
 -- datas ISO 'AAAA-MM-DD HH:MM:SS' / 'AAAA-MM-DD', booleano 0/1, exclusao logica.
 -- PRAGMAs de conexao recomendados: foreign_keys=ON, journal_mode=WAL,
 -- busy_timeout=5000, recursive_triggers=OFF.
 --
--- Decisoes/desvios (ver tambem README.md):
+-- Decisoes/desvios (ver tambem upgrade/README.md):
 --  * funcionario ganhou criado_por/atualizado_por (opcionais) para permitir
 --    verificar FUNCIONARIO_GERENCIAR; o primeiro funcionario (bootstrap) e livre.
 --  * cliente_contato/cliente_endereco ganharam criado_por/atualizado_por

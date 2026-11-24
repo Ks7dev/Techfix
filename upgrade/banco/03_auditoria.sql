@@ -2,7 +2,7 @@
 -- TechFix - Banco Upgrade
 -- 03_auditoria.sql : auditoria JSON, versionamento (versao/atualizado_em),
 -- imutabilidade de logs e bloqueio de DELETE fisico
--- Fonte de verdade: docs/especificacao_upgrade.md (2.8, 1)
+-- Fonte de verdade: upgrade/docs/especificacao_upgrade.md (2.8, 1)
 --
 -- Notas de projeto:
 --  * Versionamento: um trigger AFTER UPDATE por tabela versionada incrementa

@@ -1,6 +1,6 @@
 # TechFix — Especificação do Banco de Entrega
 
-> Banco relacional SQLite da assistência técnica TechFix: 18 tabelas, FK composta de cargo, tabela de situações com histórico e tabelas de marca, modelo e tipo. As regras RN01–RN04 são garantidas pelo próprio banco (CHECKs e triggers). Pasta: `banco_entrega/`.
+> Banco relacional SQLite da assistência técnica TechFix: 18 tabelas, FK composta de cargo, tabela de situações com histórico e tabelas de marca, modelo e tipo. As regras RN01–RN04 são garantidas pelo próprio banco (CHECKs e triggers). Pasta: `entrega/`.
 
 ## 1. Princípios do modelo
 - FK composta `(id_funcionario, id_funcionario_cargo) → funcionario(id, id_cargo)` com `CHECK` de cargo. Ela garante que o cargo gravado é o real e restringe quem pode cadastrar.
@@ -90,5 +90,5 @@ Total: 22 triggers.
 - entradas de peça (estoque inicial e reposições);
 - 1 descarte.
 
-## 7. Entregáveis (`banco_entrega/`)
+## 7. Entregáveis (`entrega/banco/`)
 `01_tabelas.sql`, `02_regras.sql`, `03_views.sql`, `04_dados.sql`, `techfix_entrega_completo.sql` (reúne as quatro partes, roda sozinho e pode ser executado de novo), `techfix_entrega.sqlite` (banco pronto) e `README.md`.

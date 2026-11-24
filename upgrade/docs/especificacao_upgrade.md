@@ -1,7 +1,7 @@
 # TechFix — Especificação do Banco Upgrade
 
 > Banco Upgrade: a evolução do banco de entrega, completo e de alta complexidade, com recursos de nível produção. Ele é derivado
-> deste documento. Pasta: `banco_upgrade/`.
+> deste documento. Pasta: `upgrade/`.
 > Ele atende RF01–RF11 e RN01–RN04 e acrescenta: controle de acesso por
 > permissões, auditoria completa em JSON, razão de estoque (kardex) com custo
 > médio ponderado, máquina de estados da OS, orçamento, pagamentos múltiplos e
@@ -270,7 +270,7 @@ Todas as colunas FK, mais:
   - com desconto concedido pelo gerente.
 - Mais 1 descarte e 1 ajuste de inventário.
 
-## 6. Entregáveis (`banco_upgrade/`)
+## 6. Entregáveis (`upgrade/banco/`)
 - `01_estrutura.sql` (tabelas e índices)
 - `02_regras.sql` (triggers de negócio)
 - `03_auditoria.sql` (triggers de auditoria, versão e `atualizado_em`, bloqueio de DELETE)

@@ -245,14 +245,14 @@ PRAGMA foreign_keys = ON;
 -- =============================================================================
 -- TechFix - Banco Upgrade (SQLite >= 3.38)
 -- 01_estrutura.sql : tabelas (STRICT) e indices
--- Fonte de verdade: docs/especificacao_upgrade.md
+-- Fonte de verdade: upgrade/docs/especificacao_upgrade.md
 --
 -- Convencoes: dinheiro em centavos (INTEGER), percentual em pontos-base,
 -- datas ISO 'AAAA-MM-DD HH:MM:SS' / 'AAAA-MM-DD', booleano 0/1, exclusao logica.
 -- PRAGMAs de conexao recomendados: foreign_keys=ON, journal_mode=WAL,
 -- busy_timeout=5000, recursive_triggers=OFF.
 --
--- Decisoes/desvios (ver tambem README.md):
+-- Decisoes/desvios (ver tambem upgrade/README.md):
 --  * funcionario ganhou criado_por/atualizado_por (opcionais) para permitir
 --    verificar FUNCIONARIO_GERENCIAR; o primeiro funcionario (bootstrap) e livre.
 --  * cliente_contato/cliente_endereco ganharam criado_por/atualizado_por
@@ -743,7 +743,7 @@ CREATE INDEX idx_auditoria_funcionario   ON auditoria(id_funcionario);
 -- TechFix - Banco Upgrade
 -- 02_regras.sql : triggers de negocio (permissoes, Luhn, kardex, maquina de
 -- estados da OS, orcamento, precos congelados, estorno, pagamentos)
--- Fonte de verdade: docs/especificacao_upgrade.md
+-- Fonte de verdade: upgrade/docs/especificacao_upgrade.md
 --
 -- Padrao de permissao (secao 2.1) - funcionario inativo nao executa nada:
 --   NOT EXISTS (SELECT 1 FROM funcionario f
@@ -757,7 +757,7 @@ CREATE INDEX idx_auditoria_funcionario   ON auditoria(id_funcionario);
 --  * recursive_triggers = OFF (padrao do SQLite).
 --  * Mensagens: RAISE(ABORT, 'CODIGO: mensagem').
 --
--- Decisoes/desvios (ver README.md):
+-- Decisoes/desvios (ver upgrade/README.md):
 --  * os_peca.custo_unitario deve ser igual a peca.custo_medio (snapshot enviado
 --    pela aplicacao; divergencia rejeitada, como no preco congelado).
 --  * Estorno de peca devolve o estoque ao custo medio vigente (custo medio nao
@@ -1476,7 +1476,7 @@ END;
 -- TechFix - Banco Upgrade
 -- 03_auditoria.sql : auditoria JSON, versionamento (versao/atualizado_em),
 -- imutabilidade de logs e bloqueio de DELETE fisico
--- Fonte de verdade: docs/especificacao_upgrade.md (2.8, 1)
+-- Fonte de verdade: upgrade/docs/especificacao_upgrade.md (2.8, 1)
 --
 -- Notas de projeto:
 --  * Versionamento: um trigger AFTER UPDATE por tabela versionada incrementa
@@ -2320,7 +2320,7 @@ SELECT a.id, a.data_hora, a.tabela, a.id_registro, a.operacao,
 -- =============================================================================
 -- TechFix - Banco Upgrade
 -- 05_dados.sql : dados iniciais (seed)
--- Fonte: docs/especificacao_upgrade.md (secao 5) e tabela de pecas e servicos
+-- Fonte: upgrade/docs/especificacao_upgrade.md (secao 5) e tabela de pecas e servicos
 --
 -- ATENCAO (uso real): os senha_hash abaixo sao PLACEHOLDERS fictícios no formato
 -- bcrypt. TROQUE por hashes reais (bcrypt/argon2) gerados pela aplicacao antes

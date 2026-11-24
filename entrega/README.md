@@ -1,24 +1,32 @@
 # TechFix — Banco de Entrega
 
-Banco de dados SQLite da assistência técnica TechFix: 18 tabelas (todas `STRICT`), 22 triggers e 3 views. As regras de negócio RN01–RN04 são garantidas pelo próprio banco. Valores monetários em **centavos** (`INTEGER`). Especificação completa: `docs/especificacao_entrega.md`.
+## Conteúdo desta pasta
+
+| Pasta | O que tem |
+|---|---|
+| [banco/](banco/) | Scripts SQL por partes, script completo (`techfix_entrega_completo.sql`) e o banco `.sqlite` pronto |
+| [docs/](docs/) | Especificação (`especificacao_entrega.md`) e dicionário de dados (`dicionario_de_dados_entrega.xlsx`) |
+| [modelos/](modelos/) | DER e MER do Banco de Entrega (`.drawio` e `.png`) |
+
+Banco de dados SQLite da assistência técnica TechFix: 18 tabelas (todas `STRICT`), 22 triggers e 3 views. As regras de negócio RN01–RN04 são garantidas pelo próprio banco. Valores monetários em **centavos** (`INTEGER`). Especificação completa: [`docs/especificacao_entrega.md`](docs/especificacao_entrega.md).
 
 ## Como criar o banco
 
-Use o **script único** `techfix_entrega_completo.sql`, que reúne as quatro partes (`01` a `04`).
+Use o **script único** [`banco/techfix_entrega_completo.sql`](banco/techfix_entrega_completo.sql), que reúne as quatro partes (`01` a `04`).
 
 - **DB Browser for SQLite:** `File > New Database`, cancele o assistente de tabela, abra a aba **Execute SQL**, abra o arquivo, execute tudo (Ctrl+Enter) e grave (Ctrl+S).
 - **SQLiteStudio:** crie um banco, abra o Editor SQL, carregue o arquivo e execute (F9).
 - **sqlite3:**
 
 ```
-sqlite3 techfix.sqlite < techfix_entrega_completo.sql
+sqlite3 techfix.sqlite < banco/techfix_entrega_completo.sql
 ```
 
-O script apaga e recria tudo, então pode ser executado de novo. Se preferir, abra direto o `techfix_entrega.sqlite`, que já vem pronto.
+O script apaga e recria tudo, então pode ser executado de novo. Se preferir, abra direto o `banco/techfix_entrega.sqlite`, que já vem pronto.
 
 O estoque, o total da OS e a data de fechamento são calculados por triggers: não escreva esses valores à mão.
 
-## Arquivos
+## Arquivos de `banco/`
 
 | Arquivo | Conteúdo |
 |---|---|

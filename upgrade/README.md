@@ -1,7 +1,15 @@
 # TechFix - Banco Upgrade (SQLite)
 
+## Conteúdo desta pasta
+
+| Pasta | O que tem |
+|---|---|
+| [banco/](banco/) | Scripts SQL por partes, script completo (`techfix_upgrade_completo.sql`) e o banco `.sqlite` pronto |
+| [docs/](docs/) | Especificação (`especificacao_upgrade.md`) e dicionário de dados (`dicionario_de_dados_upgrade.xlsx`) |
+| [modelos/](modelos/) | DER e MER do Banco Upgrade (`.drawio` e `.png`) |
+
 Banco Upgrade: a evolução do banco de entrega, completo e de alta complexidade, com recursos de nível produção, para a assistência técnica TechFix, derivado de
-[`docs/especificacao_upgrade.md`](../docs/especificacao_upgrade.md). Atende RF01–RF11 e
+[`docs/especificacao_upgrade.md`](docs/especificacao_upgrade.md). Atende RF01–RF11 e
 RN01–RN04 e acrescenta controle de acesso por permissões, auditoria JSON, razão de estoque
 (kardex) com custo médio ponderado, máquina de estados da OS, orçamento, pagamentos múltiplos e
 parcelados, garantia, histórico de preços, compras com nota fiscal e índices.
@@ -20,9 +28,9 @@ parcelados, garantia, histórico de preços, compras com nota fiscal e índices.
 |---|---|
 | **DB Browser for SQLite** | Novo banco > aba *Executar SQL* > *Abrir arquivo SQL* > `techfix_upgrade_completo.sql` > *Executar tudo* (Ctrl+Return) > *Gravar alterações* (Ctrl+S). |
 | **SQLiteStudio** | Criar/abrir banco > *Ferramentas > Abrir editor SQL* > abrir o arquivo > *Executar* (F9). |
-| **sqlite3 (CLI)** | `sqlite3 techfix_upgrade.sqlite < techfix_upgrade_completo.sql` |
+| **sqlite3 (CLI)** | `sqlite3 techfix_upgrade.sqlite < banco/techfix_upgrade_completo.sql` |
 
-O banco já pronto e populado também está em `techfix_upgrade.sqlite`.
+O banco já pronto e populado também está em `banco/techfix_upgrade.sqlite`.
 
 ### PRAGMAs de conexão recomendados
 
@@ -33,7 +41,7 @@ PRAGMA busy_timeout = 5000;
 PRAGMA recursive_triggers = OFF;  -- o projeto depende deste padrão
 ```
 
-## Arquivos
+## Arquivos de `banco/`
 
 | Arquivo | Conteúdo |
 |---|---|

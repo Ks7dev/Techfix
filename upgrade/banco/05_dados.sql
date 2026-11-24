@@ -1,7 +1,7 @@
 -- =============================================================================
 -- TechFix - Banco Upgrade
 -- 05_dados.sql : dados iniciais (seed)
--- Fonte: docs/especificacao_upgrade.md (secao 5) e tabela de pecas e servicos
+-- Fonte: upgrade/docs/especificacao_upgrade.md (secao 5) e tabela de pecas e servicos
 --
 -- ATENCAO (uso real): os senha_hash abaixo sao PLACEHOLDERS fictícios no formato
 -- bcrypt. TROQUE por hashes reais (bcrypt/argon2) gerados pela aplicacao antes
