@@ -1,0 +1,22 @@
+# Backups do draw.io
+*.drawio.bkp
+.$*
+
+# Temporários do Office/LibreOffice
+~$*
+.~lock.*#
+
+# SQLite auxiliares
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Sistema operacional
+Thumbs.db
+desktop.ini
