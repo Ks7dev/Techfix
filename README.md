@@ -17,7 +17,7 @@ O **Banco Upgrade** parte do mesmo domínio e vai além: acesso por permissões 
 
 | Documento | Onde | Para que serve |
 |---|---|---|
-| Requisitos (PDF) | [docs/requisitos/Atividade BD - TechFix.pdf](docs/requisitos/Atividade%20BD%20-%20TechFix.pdf) | O briefing original da atividade, com os RF e as RN |
+| Requisitos e arquivos-base | [docs/requisitos/](docs/requisitos/) | O briefing da atividade ([PDF](docs/requisitos/Atividade%20BD%20-%20TechFix.pdf), com os RF e as RN), a visão do sistema ([PDF](docs/requisitos/Sistema-de-Gestao-TechFix.pdf)), o [modelo do dicionário](docs/requisitos/modelo_dicionario_de_dados.xlsx) e a [tabela de peças e serviços](docs/requisitos/tabela_pecas_servicos.txt) |
 | Especificação do Entrega | [docs/especificacao_entrega.md](docs/especificacao_entrega.md) | Explica o modelo e cada decisão tomada, tabela por tabela |
 | Especificação do Upgrade | [docs/especificacao_upgrade.md](docs/especificacao_upgrade.md) | O mesmo para o banco com recursos de nível produção |
 | Dicionário do Entrega | [docs/dicionario_de_dados_entrega.xlsx](docs/dicionario_de_dados_entrega.xlsx) | Cada coluna, tipo e restrição das 18 tabelas |
@@ -95,7 +95,8 @@ README.md
 HISTORICO.md
 .gitattributes  .gitignore
 docs/
-  requisitos/Atividade BD - TechFix.pdf
+  requisitos/  Atividade BD - TechFix.pdf  Sistema-de-Gestao-TechFix.pdf
+              modelo_dicionario_de_dados.xlsx  tabela_pecas_servicos.txt  README.md
   especificacao_entrega.md
   especificacao_upgrade.md
   dicionario_de_dados_entrega.xlsx
