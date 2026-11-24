@@ -11,12 +11,6 @@
 *.sqlite-wal
 *.sqlite-shm
 
-# Python
-__pycache__/
-*.pyc
-.venv/
-venv/
-
 # Sistema operacional
 Thumbs.db
 desktop.ini
